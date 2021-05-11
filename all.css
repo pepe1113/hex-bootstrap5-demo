@@ -1,0 +1,36 @@
+body {
+  font-weight: bold;
+}
+.bg-main {
+  background-color: #07563f;
+}
+.banner-carousel-item {
+  height: 500px;
+}
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+}
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.bg-feature {
+  background-color: #17a2b8 !important;
+}
+.text-feature {
+  color: #17a2b8 !important;
+}
+.btn {
+  border-width: 2px;
+}
+.bg-md-dark {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+@media (min-width: 768px) {
+  .text-md-dark {
+    color: #000 !important;
+  }
+  .bg-md-dark {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}

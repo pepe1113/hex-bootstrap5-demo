@@ -19,44 +19,7 @@
       crossorigin="anonymous"
     />
     <title>六角西餐廳</title>
-    <style>
-      body {
-        font-weight: bold;
-      }
-      .bg-main {
-        background-color: #07563f;
-      }
-      .banner-carousel-item {
-        height: 500px;
-      }
-      .bg-cover {
-        background-size: cover;
-        background-position: center center;
-      }
-      .carousel-caption {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-      .bg-feature {
-        background-color: #17a2b8 !important;
-      }
-      .text-feature {
-        color: #17a2b8 !important;
-      }
-      .btn {
-        border-width: 2px;
-      }
-      .bg-md-dark {
-        background-color: rgba(0, 0, 0, 0.3) !important;
-      }
-      @media (min-width: 768px) {
-        .text-md-dark {
-          color: #000 !important;
-        }
-        .bg-md-dark {
-          background-color: rgba(0, 0, 0, 0);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="all.css" />
   </head>
   <body>
     <header>
@@ -68,7 +31,10 @@
       </div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand fw-bold" href="#"><img src="logo_w.svg" /></a>
+          <h1 class="h6">
+            <a class="navbar-brand fw-bold" href="#"><img src="logo_w.svg" /></a>
+          </h1>
+
           <button
             class="navbar-toggler"
             type="button"
@@ -437,14 +403,14 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label class="form-label">Email Address</label>
-                <input type="email" class="form-control" placeholder="Enter your Email" />
+                <label class="form-label" for="l-email">Email Address</label>
+                <input type="email" class="form-control" placeholder="Enter your Email" id="l-email" />
                 <div class="form-text">We'll never share your email with anyone else.</div>
               </div>
               <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+                <label for="l-password" class="form-label">Password</label>
 
-                <input type="password" id="password" class="form-control" placeholder="Enter your Password" />
+                <input type="password" id="l-password" class="form-control" placeholder="Enter your Password" />
               </div>
               <div>
                 <input type="checkbox" name="remember" id="remember" class="me-2" /><label for="remember"
@@ -499,23 +465,33 @@
               <div class="col-md-6">
                 <form>
                   <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="text" class="form-control" placeholder="Enter your Email" />
+                    <label class="form-label" for="r-email">Email</label>
+                    <input type="text" class="form-control" id="r-email" placeholder="Enter your Email" />
                   </div>
                   <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="r-password" class="form-label">Password</label>
                     <div class="input-group">
-                      <input type="password" class="form-control checkPassword" placeholder="Enter your Password" />
+                      <input
+                        type="password"
+                        id="r-password"
+                        class="form-control checkPassword"
+                        placeholder="Enter your Password"
+                      />
                       <a href="#" class="btn btn-secondary seePassword"><i class="fas fa-eye"></i></a>
                     </div>
                   </div>
                   <div class="mb-3">
-                    <label for="comfirm-password" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" placeholder="Enter your Password" />
+                    <label for="r-comfirmPassword" class="form-label">Confirm Password</label>
+                    <input
+                      type="password"
+                      id="r-comfirmPassword"
+                      class="form-control"
+                      placeholder="Enter your Password"
+                    />
                   </div>
                   <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input me-2" id="agreeProvision" />
-                    <label for="agreeProvision" class="form-check-label">Agree the provision</label>
+                    <input type="checkbox" class="form-check-input me-2" id="r-agreeProvision" />
+                    <label for="r-agreeProvision" class="form-check-label">Agree the provision</label>
                   </div>
                 </form>
               </div>
@@ -544,53 +520,6 @@
       integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
       crossorigin="anonymous"
     ></script>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      ;(function () {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms).forEach(function (form) {
-          form.addEventListener(
-            'submit',
-            function (event) {
-              if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-              }
-
-              form.classList.add('was-validated')
-            },
-            false
-          )
-        })
-      })()
-
-      const registerModal = document.querySelector('#registerModal')
-      registerModal.addEventListener('shown.bs.modal', function (event) {
-        const seePassword = document.querySelector('.seePassword')
-        const password = document.querySelector('.checkPassword')
-        seePassword.addEventListener('click', function (e) {
-          if (password.getAttribute('type') == 'password') {
-            password.setAttribute('type', 'text')
-          } else {
-            password.setAttribute('type', 'password')
-          }
-        })
-      })
-    </script>
-    <script>
-      $(document).ready(function () {
-        $('a[data-dismiss="modal"][data-toggle="modal"]').on('click', function () {
-          const target = $(this).data('target')
-          $(target).on('shown.bs.modal', function () {
-            $('body').addClass('modal-open')
-          })
-        })
-      })
-    </script>
+    <script src="all.js"></script>
   </body>
 </html>
